@@ -1,0 +1,13 @@
+O react é baseado em componentização.
+Import: serve para importar uma detrminada aplicação
+No App.js
+criamos uma função app e demos um retorn nela, que nos trás o código que 
+parece um html, mesmo sendo um função jlx
+além de estarmos exportando a função app
+
+No index.js 
+estamos importando a função app, e chama-mos por sua utilização como se fosse uma tag do html, por ser um componente
+(componente: réponsavel pela construção de nossa aplicação)
+a constante root tem o metodo render que pega o que passamos dentro dela e manda para para o index.html, dentro da div root
+
+

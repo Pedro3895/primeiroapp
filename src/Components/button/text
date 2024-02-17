@@ -1,0 +1,18 @@
+--Antes da desestruturação--
+import React from "react";
+import './styles.css'
+//letra maiuscula na primeira letra da função por ser componente, use Fragment.React caso queira mais elementos 
+function Button(props){//parameto no react é propriedade(props),o sistema intende que o props é objeto por causa da dotnotation
+    console.log(pros)
+    return (
+        <div className='containerbutton'>
+        <button className = {props.active ? 'button':'disabledButton'}>{props.name}</button>
+        <span>Seus dados estão a salvo conosco</span>
+        </div>
+    )
+}
+
+export default Button
+//podemos usar o projeto Button em todo o projeto React
+//dentro da props podemos fazer de outr maneira, ao importala,podemos dar um porps.nama ou props.activ
+//como props é objeto podemos desestrutura-lo

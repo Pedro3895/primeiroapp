@@ -1,0 +1,218 @@
+//function App(){
+//    return React.createElement{'div', null, 'Comprar'};//elemento, 2ªparameto, valor
+//}
+//criaria uma div com o valor comprar dentro dela, 
+
+//A função JSX permitiria criar está função mais facilmente, usando o Babel
+
+--Função original--
+import logo from './logo.svg';
+import './App.css';
+
+function App() {//criamos a função App
+  return (//ela nos retorna o código em jsx
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+--Função com o REACT--
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';//importamos a função REact
+
+function App() {
+  return React.createElement('div', null, 'comprar');
+}
+
+export default App
+    
+--Função com o Babel--
+//import logo from './logo.svg';
+//import './App.css';
+//import React from 'react';
+
+//function App() {
+//  return <div>Comprar</div>;//como se estivessomos escrevendo um html
+//}
+//export default App;
+
+//O JSX vai facilitar o processo de criação de funções REACT
+
+//--REACT Fragment--
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+    const a = 'qualquerCoisa'//antes da função return podemos escrever java normalmente
+ //<div><></div>daria erro, mesmo sendo  jsx
+  return (//só oque está após o return será construido em tela, alem de só podermos usar jsx dentro do return
+    <div className="App">
+        <div>
+            <tag>
+            </tag>
+        </div>
+        <img/>
+
+    </div>
+    //<div></div>//só podemos passar um unico elemento diretamente no return, mais de um dá erro, nada lhe impede de passar div, tag, img e etc entro da div inicial
+  );
+}
+//caso precise passar mais de um elemento no retorn use react fragmente
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+    const a = 'qualquerCoisa'//antes da função return podemos escrever java normalmente
+ 
+  return (//dentro do React.Fragmente podemos ter mais de um elemento<React.Fragment></React.Fragment>
+    <> = React.Fragment
+            <div className="App">
+        <div>
+            <tag>
+            </tag>
+        </div>
+        <img/>
+    </div>
+    <div>
+    </div>
+    </>//</React.Fragment>
+  );
+}
+//não vai criar uma outra div no seu arquivo caso se use React.Fragment
+
+//é possivel usar java dentro JSX:
+
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+    const Lista = ['Paulo', 'Gabriel', 'Pamela', 'Andressa']
+    const Numero = 30
+
+    function retornaNome () {
+        if(Numero<30) return Lista[0]
+        if(Numero>30) return Lista[3]
+        return 'Não tem nome algum'
+    }
+
+  return (//usamos '{}' quando queremos utilizar javascript no jsx, podemos então ussar as propriedades do java neste
+    <div className="App">
+      <header className="App-header">
+        <div>{retornaNome()}</div>
+        <div>{Numero * 0}</div>
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+    const Lista = [
+    {nome: 'Paulo', aluno: true},
+    {nome: 'Andressa', aluno: true},
+    {nome: 'abriel', aluno: false},
+    {nome: 'Marta', aluno: false},
+    {nome: 'Pedro', aluno: true},
+]
+
+
+  return (//usamos '{}' quando queremos utilizar javascript no jsx, podemos então ussar as propriedades do java neste
+    <div className="App">
+      <header className="App-header">
+        <div>{Lista.map((aluno) => {
+            <div>{aluno.name}</div>
+        })}
+        </div>
+        <div>{Numero * 0}</div>
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+
+
+
+function App() {//criamos a função App
+  const Lista = [//igual um array de objetos
+    {nome: 'Paulo', aluno: true},
+    {nome: 'Andressa', aluno: true},
+    {nome: 'abriel', aluno: false},
+    {nome: 'Marta', aluno: false},
+    {nome: 'Pedro', aluno: true},
+]
+ //<div></div>se fizer dara erro poís nossa função funciona como um retorn, podemos passar 
+ //um unico elemento dentro dele, teremos de usar React.fragment '<></>'
+  return (//ela nos retorna o código em jsx,
+    <div className="App">
+      <header className="App-header">
+      <div>
+        {Lista.map((aluno) => (//usando a função map dentro do jsx, usando parenteses e não chaves
+        <>
+          <div>{aluno.nome}</div>
+          <div>Aluno: <span style={aluno.aluno ?{color:'green'} : {color:'red'}}> {aluno.aluno ? 'Sim': 'Não'}</span></div>para tornar só as resposta coloridas
+        </>
+        ))}
+        </div>        
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+        <div className='test'>Test</div>
+      </header>
+    </div>
+  );
+}
+
+export default App;//exportamos a função app, o defaul indica que só séra exportado oque estiver depois dele

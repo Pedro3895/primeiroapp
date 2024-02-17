@@ -1,0 +1,22 @@
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import Button from './Components/button/button';
+import Header from './Components/header/header';
+
+function App() {
+
+  return (
+  <>
+    <Header />
+    <Button name='Botão 1' active = {true} />
+    <Button name='Botão 2' active = {false} />
+    <Button name='Botão 3' active = {false}/>
+    <spam>QualquerCoisa</spam>  
+  </>
+  );
+}
+
+export default App;
+//<Button name='Paulo'/>passamos o valor do atributo='Paulo'
+//mesmos componentes transformados pelas propriedades

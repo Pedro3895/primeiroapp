@@ -1,0 +1,4 @@
+UseREf
+Outro hook nativo do react, não é tão commun, usado para fazer referncia e ter acesso a um elemento criado em tela^, nosso DOM,
+podendo utilizar seus metodos e propriedades. 
+Pode ser utilizado dentro do userEfect ou dentor de uma função de callBack, uma função que é executada apartir de um evento

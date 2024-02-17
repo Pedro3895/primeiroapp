@@ -1,0 +1,23 @@
+//Componentes: Forma de dividirmos nossa aplicação em pequenos pedaços, tendo dois tipos, funcional e classe
+
+//Componente Funcional: componente criado com uma função 
+//Componenete de Classe: componente criado com classe(mais antigo, menos utilizado)
+//quando é componenete a primeira letra da função deve se maiuscula
+
+//O Babel que permite importar uma função e utilizala como uma tag de html
+
+//--Código criado--
+//import logo from './logo.svg';
+//import './App.css';
+//import React from 'react';
+//import Button from './Components/button/button';
+//function App() { 
+//return(
+//<>
+  //<Button />
+  //<Button />
+  //<Button />  
+  //</>    
+  //);
+//}
+//export default App;

@@ -1,0 +1,6 @@
+useMemo
+metodo que recebe uma função, onde esta não será recarregada com a atualização do componente, com seu valor de retorno estacionario na váriavel que o criou
+,támbem pode receber um array de dependencias, como no useEfect.
+Usado geralmente quando se tem uma variavel muito grande, que não queremos que seja atualizado toda vez que o componente é renderizado em tela
+Só vale apena usar esta função quando o callBack que queremos passar é uma operação extremamente lenta
+é usado em caso de ganho de performance em casos expecificos.

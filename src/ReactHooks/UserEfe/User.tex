@@ -1,0 +1,194 @@
+UserEfect
+import logo from './logo.svg';
+import './App.css';
+import React, { useState, useEffect } from 'react';//use = padrão de hooks importados do react e criados por nos
+import Button from './Components/button/button';
+import Header from './Components/header/header';
+
+
+function App() {
+ 
+  //const hookState = useState(true)//hookState é uma função nativa do react, onde devemos passar o valor inicial do meu estado
+  const [carregando, setCarregando] = useState(true)//1ªvalor atual:;2ª:função que altera o valor set+valor atual
+  //estado do contador; o hook pode ser qualquer coisa, neste caso um number
+  //contador é a constante em sí e SetContador é uma função, por isso podemos passa-los para dentro de outro componente como propriedades
+  const [contador, setContador] = useState(0)
+
+  useEffect(()=>{
+    console.log('Carragou pela primeira vez')
+
+  }, [])//é um metodo/função, dentor tera a função que queremos executar seguido do array de dependencias
+//o array de dependencias contem os estados de dependencias, que informam o userEfect da atualização do estado, caso deixe vazio só sera executado na primeira renderização
+  return (
+   <div>
+    {carregando ? 
+    <span>Carregando...</span> 
+    :
+    <div>
+      <button onClick = {()=> setContador(contador+1)}>Adicionar</button>
+      <span>{contador}</span>
+    </div>
+    }
+    <button onClick = {()=>setCarregando(!carregando)}>{carregando ? 'Carregar Site' : 'Voltar para carregamento'}</button>
+    <Button name='Alterar Valor' onClick={setContador} />
+    </div>
+  );
+}
+//spam mostra o número exibido
+//onClik para adicionar um evento de adicionar +1 ao contador
+//clicando no button o onclick leva o setContador para dentro do Button.js, oque torna o onClick no setContador
+//clicar no button altera o valor por +1, ao clicar no Button o contador mostra 20 
+export default App;
+//<Button name='Paulo'/>passamos o valor do atributo='Paulo'
+//mesmos componentes transformados pelas propriedades
+//só o active ele entende como true
+
+2ª momento do ciclo:
+import logo from './logo.svg';
+import './App.css';
+import React, { useState, useEffect } from 'react';//use = padrão de hooks importados do react e criados por nos
+import Button from './Components/button/button';
+import Header from './Components/header/header';
+
+
+function App() {
+ 
+  //const hookState = useState(true)//hookState é uma função nativa do react, onde devemos passar o valor inicial do meu estado
+  const [carregando, setCarregando] = useState(true)//1ªvalor atual:;2ª:função que altera o valor set+valor atual
+  //estado do contador; o hook pode ser qualquer coisa, neste caso um number
+  //contador é a constante em sí e SetContador é uma função, por isso podemos passa-los para dentro de outro componente como propriedades
+  const [contador, setContador] = useState(0)
+
+  useEffect(()=>{
+    console.log('Carragou pela primeira vez')//será executado quando for renderizado da 1ªvez e quando o contador tiverum novo valor
+
+  }, [contador])//contador é dependencia da userEfect
+
+  return (
+   <div>
+    {carregando ? 
+    <span>Carregando...</span> 
+    :
+    <div>
+      <button onClick = {()=> setContador(contador+1)}>Adicionar</button>
+      <span>{contador}</span>
+    </div>
+    }
+    <button onClick = {()=>setCarregando(!carregando)}>{carregando ? 'Carregar Site' : 'Voltar para carregamento'}</button>
+    <Button name='Alterar Valor' onClick={setContador} />
+    </div>
+  );
+}
+//spam mostra o número exibido
+//onClik para adicionar um evento de adicionar +1 ao contador
+//clicando no button o onclick leva o setContador para dentro do Button.js, oque torna o onClick no setContador
+//clicar no button altera o valor por +1, ao clicar no Button o contador mostra 20 
+export default App;
+//<Button name='Paulo'/>passamos o valor do atributo='Paulo'
+//mesmos componentes transformados pelas propriedades
+//só o active ele entende como true
+
+multiplos userEfect
+import logo from './logo.svg';
+import './App.css';
+import React, { useState, useEffect } from 'react';//use = padrão de hooks importados do react e criados por nos
+import Button from './Components/button/button';
+import Header from './Components/header/header';
+
+
+function App() {
+ 
+  //const hookState = useState(true)//hookState é uma função nativa do react, onde devemos passar o valor inicial do meu estado
+  const [carregando, setCarregando] = useState(true)//1ªvalor atual:;2ª:função que altera o valor set+valor atual
+  //estado do contador; o hook pode ser qualquer coisa, neste caso um number
+  //contador é a constante em sí e SetContador é uma função, por isso podemos passa-los para dentro de outro componente como propriedades
+  const [contador, setContador] = useState(0)
+
+  useEffect(()=>{
+    console.log('Contador')//será executado quando for renderizado da 1ªvez e quando o contador tiverum novo valor
+
+  }, [contador])//
+//posso ter infinitos estados como dependencia do meu userEfect, mais é mais comum criar vários userEfect's
+  
+  useEffect(()=>{ 
+    console.log('Carregando')
+  }, [carregando])
+
+  return (
+   <div>
+    {carregando ? 
+    <span>Carregando...</span> 
+    :
+    <div>
+      <button onClick = {()=> setContador(contador+1)}>Adicionar</button>
+      <span>{contador}</span>
+    </div>
+    }
+    <button onClick = {()=>setCarregando(!carregando)}>{carregando ? 'Carregar Site' : 'Voltar para carregamento'}</button>
+    <Button name='Alterar Valor' onClick={setContador} />
+    </div>
+  );
+}
+//spam mostra o número exibido
+//onClik para adicionar um evento de adicionar +1 ao contador
+//clicando no button o onclick leva o setContador para dentro do Button.js, oque torna o onClick no setContador
+//clicar no button altera o valor por +1, ao clicar no Button o contador mostra 20 
+export default App;
+//<Button name='Paulo'/>passamos o valor do atributo='Paulo'
+//mesmos componentes transformados pelas propriedades
+//só o active ele entende como true
+
+3ª momento do cicloimport logo from './logo.svg';
+import './App.css';
+import React, { useState, useEffect } from 'react';//use = padrão de hooks importados do react e criados por nos
+import Button from './Components/button/button';
+import Header from './Components/header/header';
+
+
+function App() {
+ 
+  //const hookState = useState(true)//hookState é uma função nativa do react, onde devemos passar o valor inicial do meu estado
+  const [carregando, setCarregando] = useState(true)//1ªvalor atual:;2ª:função que altera o valor set+valor atual
+  //estado do contador; o hook pode ser qualquer coisa, neste caso um number
+  //contador é a constante em sí e SetContador é uma função, por isso podemos passa-los para dentro de outro componente como propriedades
+  const [contador, setContador] = useState(0)
+
+  useEffect(()=>{
+    console.log('Contador')//será executado quando for renderizado da 1ªvez e quando o contador tiverum novo valor
+
+  }, [contador])//
+//para quando o componente é retirado da tela, devemos passar o callback(função) dentro da nossa função de callback já estabelecida
+//uma função dentro de outra função, iremos retornar o callback quando o elemento deve ser deconstruido  
+  useEffect(()=>{ 
+    console.log('Carregando')
+
+    return () =>{//executado quando o trecho de código é removido da tela
+      
+
+    }
+
+  }, [carregando])
+
+  return (
+   <div>
+    {carregando ? 
+    <span>Carregando...</span> 
+    :
+    <div>
+      <button onClick = {()=> setContador(contador+1)}>Adicionar</button>
+      <span>{contador}</span>
+    </div>
+    }
+    <button onClick = {()=>setCarregando(!carregando)}>{carregando ? 'Carregar Site' : 'Voltar para carregamento'}</button>
+    <Button name='Alterar Valor' onClick={setContador} />
+    </div>
+  );
+}
+//spam mostra o número exibido
+//onClik para adicionar um evento de adicionar +1 ao contador
+//clicando no button o onclick leva o setContador para dentro do Button.js, oque torna o onClick no setContador
+//clicar no button altera o valor por +1, ao clicar no Button o contador mostra 20 
+export default App;
+//<Button name='Paulo'/>passamos o valor do atributo='Paulo'
+//mesmos componentes transformados pelas propriedades
+//só o active ele entende como true

@@ -1,0 +1,7 @@
+useCallBack
+aramzena a função inteira como se fosse um callBack, para ela ser executada apartir de um evento
+a função callBack só será executado quando button for acionado, depois que todos os elemento foram criados em tela
+não retornamos um valor para armazenar, mas sim a função que só é recarragada caso aja uma dependência, 
+após a primeira renderização do componente.
+sempre que for usar um valor no seu callBAck, lembre de passa-lo tambem como parte da sua dependência, 
+para não utilizar um valor desatualizado na função. 

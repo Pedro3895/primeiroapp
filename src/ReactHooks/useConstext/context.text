@@ -1,0 +1,8 @@
+-Contexto/Estado global:  serve para centralizar valores e estados e compartilhar volores e estados 
+entre componenetes, que não interagem diretamente(não tem relação de parentesco), ou que possuem 
+relação mais são distantes um do outro, almentando a complexidade do código.
+comportilhar componentes sem a necessidade de passar por props.
+devemos criar uma pasta de contexto(stores e contexts = nomeclatura usada para pastas que armazenam valores), podemos ter vários contextos por aplicação
+-
+
+-Contexto global: uma informação compartilhado por todo o sue programa, permitindo que está seja utilizada sem o uso de pros

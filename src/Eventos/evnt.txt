@@ -1,0 +1,51 @@
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+-Onclick-
+import Button from './Components/button/button';
+import Header from './Components/header/header';
+function App() {
+//evento criado, para disparar o evento use a função onClik no objeto que deseja
+  function evento(){
+    alert('O evento foi disparado')
+  }
+//chamei de evento, e defini como onClick na pagina do componente 
+  return (
+   <div>
+      <Button evento={() => evento()} name='Botão 1' active  />
+      <Button name='Botão 2'  />
+      <Button name='Botão 3' />
+      <spam onClick={()=>evento()}>QualquerCoisa</spam>  
+    </div>
+//  );
+//}
+export default App;
+
+-addEventListener-
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import Button from './Components/button/button';
+import Header from './Components/header/header';
+
+function App() {
+//evento criado, para disparar o evento use a função onClik no objeto que deseja
+  function evento(){
+    alert('O evento foi disparado')
+  }
+//chamei de evento, e defini como onClick na pagina do componente 
+
+window.addEventListener('scroll', () => console.log('Evento Aconteceu'))//window=objeto global do java;addEventListener('evento','função do callback para ser acionado',)
+//
+  return (
+   <div style={{height: '200vh'}}>
+      <Button evento={() => evento()} name='Botão 1' active  />
+      <Button name='Botão 2'  />
+      <Button name='Botão 3' />
+      <spam onClick={()=>evento()}>QualquerCoisa</spam>  
+    </div>
+
+  );
+}
+
+export default App;
